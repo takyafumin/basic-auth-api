@@ -1,21 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
+use App\UseCases\Post\IndexAction;
+use Illuminate\Database\Eloquent\Collection;
 
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * /post/
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(IndexAction $action): Collection
     {
-        //
+        return $action();
     }
 
     /**
