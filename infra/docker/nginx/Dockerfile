@@ -17,4 +17,7 @@ COPY --from=node /opt /opt
 # nginx config file
 COPY ./infra/docker/nginx/*.conf /etc/nginx/conf.d/
 
+# auth basic password file
+COPY ./infra/docker/nginx/.htpasswd /etc/nginx/
+
 WORKDIR /work/backend
